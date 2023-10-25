@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
             console.log(data)
             console.log('done with data loading')
         
-        // code below updates the data received onto the website front page
+        // code below gets the Police Force data information and inserts it onto the website front page
             document.querySelector('#result-policeData').innerHTML = `
                 <h1>Force Data</h1>
                 <p>Name of force: ${data.name} </p>
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
                 <a target = "_blank" href = "${data.engagement_methods[0].url}"> ${locatio} Facebook Page</a>
                 <a target = "_blank" href = "${data.engagement_methods[1].url}"> ${locatio} Twitter Website Page</a>
                 <a target = "_blank" href = "${data.engagement_methods[3].url}"> ${locatio} Crime News Update Website Page</a>
-                <a target = "_blank" href = "${data.url}"> Police website </a>
+                <a target = "_blank" href = "${data.url}"> ${locatio} Police Official website </a>
             `
 
 
@@ -41,19 +41,19 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 
     document.querySelector('#senior-officer-data-form').addEventListener('submit', (event) => {
         event.preventDefault()
-
+        // code below gets the location data from the HTML page 
         let locatio = document.querySelector("#seniorOfficerlocal").value
         alert(locatio)
         console.log(locatio)
 
-        // code below gets Police Force data from server and converts it to local json for work purposes
+        // code below gets the Senior Officer data within a certain location from the server and converts it to local json for work purposes
         fetch(`https://data.police.uk/api/forces/` + locatio + `/people`)
         .then(res => res.json())
         .then(data => {
             console.log(data)
             console.log('done with data loading')
 
-        
+            // code below gets the Senior Officer data within a certain location and inserts it onto the website front page
             for (elem of data) {
                 document.querySelector('#result-seniorOfficerData').innerHTML += `
                 <h1>Name: ${elem.name}</h1>
