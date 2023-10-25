@@ -48,11 +48,28 @@
                 
             </div>
 
+            <div id = "list-of-neighbourhoods-data ">
+                List of neighboruhoods in a region
+                
+                <form id = "neighbourhood-data-form" action = "#" method = "get">
+                    <label for ="neighbourhoods">List of neighboruhoods in a certain region</label>
+                    <input type="text" id = "neighbourhoods" name = "neighbourhoods" placeholder = "Search for neighbourhoods in this location" >
+                    <button id = "force-button"> Search</button>  
+                </form>
+
+                <div id = "result-NeighbourhoodsData">
+
+                </div>
+
+            </div>
+
             <div id = "nearby-events-data ">
                 nearby-events-data
+
                 <form id = "nearby-events-data-form" action = "#" method = "get">
                     <label for ="eventsLocal">Events occuring in a certain region</label>
-                    <input type="text" id = "eventsLocal" name = "eventsLocal" placeholder = "Search for Events occuring in this location" >
+                    <input type="text" id = "eventsLocal" name = "eventsLocal" placeholder = "Enter location here" >
+                    <input type="text" id = "neighbourhoodID" name = "neighbourhoodID" placeholder = "Input specific neighborhood ID" >
                     <button id = "force-button"> Search</button>  
                 </form>
 

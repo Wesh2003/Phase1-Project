@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', (e)=>{
     e.preventDefault()
 
-
+// -------------------------------Code for a major div section ---------------------------
+// --------------------------Police Force Data-------------------------
     document.querySelector('#force-form').addEventListener('submit', (event) => {
         event.preventDefault()
         // code below gets the location data from the HTML page 
-        let locatio = document.querySelector("#forcedatalocal").value
+        let locatio = document.querySelector("#forcedatalocal").value.toLowerCase()
 
         // code below tests whether code is working
         alert(locatio)
@@ -38,11 +39,11 @@ document.addEventListener('DOMContentLoaded', (e)=>{
     })
 
 // -------------------------------Another code for another major div section ---------------------------
-
+// --------------------------Senior Officer Data-------------------------
     document.querySelector('#senior-officer-data-form').addEventListener('submit', (event) => {
         event.preventDefault()
         // code below gets the location data from the HTML page 
-        let locatio = document.querySelector("#seniorOfficerlocal").value
+        let locatio = document.querySelector("#seniorOfficerlocal").value.toLowerCase()
         alert(locatio)
         console.log(locatio)
 
@@ -69,7 +70,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 
 
 // -------------------------------Another code for another major div section ---------------------------
-
+// --------------------------Crime Data-------------------------
 
     document.querySelector('#crime-data-form').addEventListener('submit', (event) => {
         event.preventDefault()
@@ -101,12 +102,81 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 
 
 // -------------------------------Another code for another major div section ---------------------------
+// --------------------------Neighbourhood Data-------------------------
+
+    document.querySelector('#neighbourhood-data-form').addEventListener('submit', (event) => {
+        event.preventDefault()
+        // code below gets the date from the HTML page
+       // code below gets the location data from the HTML page 
+       let locatio = document.querySelector("#neighbourhoods").value.toLowerCase()
+
+       // code below tests whether code is working
+       alert(locatio)
+       console.log(locatio)
+
+       // code below gets Police Force data from server and converts it to local json for work purposes
+       fetch(`https://data.police.uk/api/` + locatio + `/neighbourhoods`)
+       .then(res => res.json())
+       .then(data => {
+           console.log(data)
+           console.log('done with data loading')
+
+           for (elem of data) {
+            document.querySelector('#result-NeighbourhoodsData').innerHTML += `
+
+            <p><b>Name:</b> ${elem.name}</p>
+            <p><b>ID:</b> ${elem.id}</p>
+            <br>
+            `
+        }
+       
+       });
+        
+
+    })
 
 
 
 
+// -------------------------------Another code for another major div section ---------------------------
 
-})
+
+
+    document.querySelector('#nearby-events-data').addEventListener('submit', (event) => {
+        event.preventDefault()
+        // code below gets the date from the HTML page
+    // code below gets the location data from the HTML page 
+    let locatio = document.querySelector("#neighbourhoods").value.toLowerCase()
+
+    // code below tests whether code is working
+    alert(locatio)
+    console.log(locatio)
+
+    // code below gets Police Force data from server and converts it to local json for work purposes
+    fetch(`https://data.police.uk/api/` + locatio + `/` +identif + `/events`)
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+        console.log('done with data loading')
+
+        for (elem of data) {
+            document.querySelector('#result-NeighbourhoodsData').innerHTML += `
+
+            <p><b>Name:</b> ${elem.name}</p>
+            <p><b>ID:</b> ${elem.id}</p>
+            <br>
+            `
+        }
+    
+    });
+        
+
+    })
+
+
+
+
+}) // ---MARKS THE END OF DOMCONTENT LOADED--
 
 
 
