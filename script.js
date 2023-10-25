@@ -85,15 +85,16 @@ document.querySelector('#crime-data-form').addEventListener('submit', (event) =>
         console.log(data)
         console.log('done with data loading')
 
-        /*
+        
         for (elem of data) {
-            document.querySelector('#result-seniorOfficerData').innerHTML += `
-            <h1>Name: ${elem.name}</h1>
-            <h2>Rank: ${elem.rank}</h2>
-            ${elem.bio}
+            document.querySelector('#result-crimeData').innerHTML += `
+            
+            <h3>Name: ${elem.name}</h3>
+            <a target = "_blank" href="${elem.url}">${elem.name}</a>
+            
             `
         }
-        */
+        
     });
     
 
