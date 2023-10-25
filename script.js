@@ -71,21 +71,21 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 // -------------------------------Another code for another div section ---------------------------
 
 
-document.querySelector('#senior-officer-data-form').addEventListener('submit', (event) => {
+document.querySelector('#crime-data-form').addEventListener('submit', (event) => {
     event.preventDefault()
 
-    let locatio = document.querySelector("#seniorOfficerlocal").value
-    alert(locatio)
-    console.log(locatio)
+    let date = document.querySelector("#crimesOnDate").value
+    alert(date)
+    console.log(date)
 
     // code below gets Police Force data from server and converts it to local json for work purposes
-    fetch(`https://data.police.uk/api/forces/` + locatio + `/people`)
+    fetch(`https://data.police.uk/api/crime-categories?date=` + date)
     .then(res => res.json())
     .then(data => {
         console.log(data)
         console.log('done with data loading')
 
-    
+        /*
         for (elem of data) {
             document.querySelector('#result-seniorOfficerData').innerHTML += `
             <h1>Name: ${elem.name}</h1>
@@ -93,7 +93,7 @@ document.querySelector('#senior-officer-data-form').addEventListener('submit', (
             ${elem.bio}
             `
         }
-
+        */
     });
     
 

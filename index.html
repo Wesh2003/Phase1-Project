@@ -8,20 +8,6 @@
     <body>
         <div id = "main">
 
-            <div id = "crime-data">
-                crime data of a certain time
-                <form id = "force-form" action = "#" method = "get">
-                    <label for ="forcedatalocal">Force in a certain region</label>
-                    <input type="text" id = "forcedatalocal" name = "forcedatalocal" placeholder = "Search for forces in this location" >
-                    <button id = "force-button"> Search</button>  
-                </form>
-
-                <div id = "result-policeData">
-
-                </div>
-                
-            </div>
-
             <div id = "police-data ">
                 Police force data 
                 <form id = "force-form" action = "#" method = "get">
@@ -46,6 +32,20 @@
                 <div id = "result-seniorOfficerData">
 
                 </div>
+            </div>
+
+            <div id = "crime-data">
+                crime data of a certain time
+                <form id = "crime-data-form" action = "#" method = "get">
+                    <label for ="crimesOnDate">Crimes committed on a certain date</label>
+                    <input type="date" id = "crimesOnDate" name = "crimesOnDate" placeholder = "Search for crimes committed on this date" >
+                    <button id = "force-button"> Search</button>  
+                </form>
+
+                <div id = "result-crimeData">
+
+                </div>
+                
             </div>
 
             <div id = "nearby-events-data ">
