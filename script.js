@@ -142,15 +142,20 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 
 
 
-    document.querySelector('#nearby-events-data').addEventListener('submit', (event) => {
+    document.querySelector('#nearby-events-data-form').addEventListener('submit', (event) => {
         event.preventDefault()
         // code below gets the date from the HTML page
     // code below gets the location data from the HTML page 
     let locatio = document.querySelector("#neighbourhoods").value.toLowerCase()
 
+    // code below gets the neighbourhood ID from the HTML page
+    let identif = document.querySelector('#neighbourhoodID').value.toUpperCase()
+
     // code below tests whether code is working
     alert(locatio)
     console.log(locatio)
+    alert(identif)
+    console.log(identif)
 
     // code below gets Police Force data from server and converts it to local json for work purposes
     fetch(`https://data.police.uk/api/` + locatio + `/` +identif + `/events`)
@@ -159,15 +164,20 @@ document.addEventListener('DOMContentLoaded', (e)=>{
         console.log(data)
         console.log('done with data loading')
 
+        
         for (elem of data) {
-            document.querySelector('#result-NeighbourhoodsData').innerHTML += `
+            document.querySelector('#result-nearbyEventsData').innerHTML += `
 
-            <p><b>Name:</b> ${elem.name}</p>
-            <p><b>ID:</b> ${elem.id}</p>
+            <p><b>Address:</b> ${elem.address}</p>
+            <p><b>Title:</b> ${elem.title}</p>
+            <p><b>Description:</b> ${elem.description}</p>
+            <p><b>Start Date:</b> ${elem.start_date}</p>
+            <p><b>End Date:</b> ${elem.end_date}</p>
             <br>
             `
         }
-    
+        
+        
     });
         
 
