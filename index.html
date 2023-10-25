@@ -1,9 +1,55 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="style.css"/>
+        <script src="script.js"></script>
 
     </head>
     <body>
-        <h1>Hello World</h1>
+        <div id = "main">
+
+            <div id = "crime-data">
+                crime data of a certain time
+                
+            </div>
+
+            <div id = "police-data ">
+                Police force data 
+                <form id = "force-form" action = "#" method = "get">
+                    <label for ="forcedatalocal">Force in a certain region</label>
+                    <input type="text" id = "forcedatalocal" name = "forcedatalocal" placeholder = "Search for forces in this location" >
+                    <button id = "force-button"> Search</button>  
+                </form>
+
+                <div id = "result-policeData">
+
+                </div>
+            </div>
+
+            <div id = "senior-officer-data ">
+                senior-officer-data
+                <form id = "senior-officer-data-form" action = "#" method = "get">
+                    <label for ="seniorOfficerlocal">Senior Officers in a certain region</label>
+                    <input type="text" id = "seniorOfficerlocal" name = "seniorOfficerlocal" placeholder = "Search for Senior Officers in this location" >
+                    <button id = "force-button"> Search</button>  
+                </form>
+
+                <div id = "result-seniorOfficerData">
+
+                </div>
+            </div>
+
+            <div id = "nearby-events-data ">
+                nearby-events-data
+            </div>
+            
+            <div id = "nearby-watchers-data ">
+                nearby-watchers-data
+            </div>
+        </div>
+
     </body>
+
+
+
 </html>
