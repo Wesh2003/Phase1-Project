@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
     })
 
 // -------------------------------Another code for another major div section ---------------------------
-// --------------------------N-------------------------
+// --------------------------Nearby Watchers data-------------------------
 
     document.querySelector('#nearby-watchers-data-form').addEventListener('submit', (event) => {
         event.preventDefault()
@@ -214,21 +214,16 @@ document.addEventListener('DOMContentLoaded', (e)=>{
             console.log('done with data loading')
 
             // code below gets the Nearby Watchers data within a certain location and inserts it onto the website front page
-            
-            /*
             for (elem of data) {
-                document.querySelector('#result-nearbyEventsData').innerHTML += `
+                document.querySelector('#result-nearbyWatchersData').innerHTML += `
 
-                <p><b>Address:</b> ${elem.address}</p>
-                <p><b>Title:</b> ${elem.title}</p>
-                <p><b>Description:</b> ${elem.description}</p>
-                <p><b>Start Date:</b> ${elem.start_date}</p>
-                <p><b>End Date:</b> ${elem.end_date}</p>
+                <p><b>Name:</b> ${elem.name}</p>
+                <p><b>Rank:</b> ${elem.rank}</p>
                 <br>
                 `
             }
             
-            */
+            
             
         });
         
