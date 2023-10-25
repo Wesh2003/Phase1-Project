@@ -1,0 +1,30 @@
+#main {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: aqua;
+
+}
+
+
+#police-data {
+    background-color: red;
+}
+
+#senior-officer-data {
+    background-color: red;
+}
+
+#list-of-neighbourhoods-data {
+    background-color: red;
+}
+
+
+#nearby-events-data {
+    background-color: red;
+}
+
+
+#nearby-watchers-data {
+    background-color: red;
+}
