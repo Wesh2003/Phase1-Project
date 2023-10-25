@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 
     })
 
-// -------------------------------Another code for another div section ---------------------------
+// -------------------------------Another code for another major div section ---------------------------
 
     document.querySelector('#senior-officer-data-form').addEventListener('submit', (event) => {
         event.preventDefault()
@@ -68,35 +68,43 @@ document.addEventListener('DOMContentLoaded', (e)=>{
     })
 
 
-// -------------------------------Another code for another div section ---------------------------
+// -------------------------------Another code for another major div section ---------------------------
 
 
-document.querySelector('#crime-data-form').addEventListener('submit', (event) => {
-    event.preventDefault()
+    document.querySelector('#crime-data-form').addEventListener('submit', (event) => {
+        event.preventDefault()
+        // code below gets the date from the HTML page
+        let date = document.querySelector("#crimesOnDate").value
+        alert(date)
+        console.log(date)
 
-    let date = document.querySelector("#crimesOnDate").value
-    alert(date)
-    console.log(date)
+        // code below gets the categories of Crime within a certain date from server and converts it to local json for work purposes
+        fetch(`https://data.police.uk/api/crime-categories?date=` + date)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            console.log('done with data loading')
 
-    // code below gets Police Force data from server and converts it to local json for work purposes
-    fetch(`https://data.police.uk/api/crime-categories?date=` + date)
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-        console.log('done with data loading')
+            // code below gets the categories of Crime within a certain daten and inserts it onto the website front page
+            for (elem of data) {
+                document.querySelector('#result-crimeData').innerHTML += `
 
-        
-        for (elem of data) {
-            document.querySelector('#result-crimeData').innerHTML += `
+                <h3>Name: ${elem.name}</h3>
+                <a target = "_blank" href="${elem.url}">${elem.name}</a>
+                `
+            }
             
-            <h3>Name: ${elem.name}</h3>
-            <a target = "_blank" href="${elem.url}">${elem.name}</a>
-            
-            `
-        }
+        });
         
-    });
-    
+
+    })
+
+
+// -------------------------------Another code for another major div section ---------------------------
+
+
+
+
 
 })
 
@@ -105,34 +113,6 @@ document.querySelector('#crime-data-form').addEventListener('submit', (event) =>
 
 
 
-
-
-})
-
-
-
-
-
-
-function getCrimeCategoriesDataFromServer() {
-    // code below gets List of crimes data of a specific date from server and converts it to local json for work purposes
-    fetch('https://data.police.uk/api/crime-categories?date=' + date )
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-    });
-    console.log('done with data loading')
-}
-
-function getSeniorOfficerDataFromServer() {
-    // code below gets Senior officer data from server and converts it to local json for work purposes
-    fetch('https://data.police.uk/api/crime-categories?date=' + date )
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-    });
-    console.log('done with data loading')
-}
 
 function getNearbyEventsDataFromServer() {
     // code below gets Nearby events data from server and converts it to local json for work purposes
