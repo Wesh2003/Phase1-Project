@@ -4,8 +4,10 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 
     document.querySelector('#force-form').addEventListener('submit', (event) => {
         event.preventDefault()
-
+        // code below gets the location data from the HTML page 
         let locatio = document.querySelector("#forcedatalocal").value
+
+        // code below tests whether code is working
         alert(locatio)
         console.log(locatio)
 
