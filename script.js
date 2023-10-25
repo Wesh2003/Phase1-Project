@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
         console.log(identif)
 
         /* code below gets the nearby events by using the ID obtained from the neighborhoods data, from server,
-        and converts it to local json for work purposes
+        alongside the location name and converts it to local json for work purposes
         */
         fetch(`https://data.police.uk/api/` + locatio + `/` +identif + `/events`)
         .then(res => res.json())
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
         let locatio = document.querySelector("#localWatchers").value.toLowerCase()
 
         // code below gets the neighbourhood ID from the HTML page
-        let identif = document.querySelector('#neighbourhoodID').value.toUpperCase()
+        let identif = document.querySelector('#neighbourhoodID2').value.toUpperCase()
 
         // code below tests whether code is working
         alert(locatio)
@@ -204,16 +204,18 @@ document.addEventListener('DOMContentLoaded', (e)=>{
         alert(identif)
         console.log(identif)
 
-        /* code below gets the nearby events by using the ID obtained from the neighborhoods data, from server,
-        and converts it to local json for work purposes
+        /* code below gets the nearby watchers by using the ID obtained from the neighborhoods data, from server,
+        alongside the location name and converts it to local json for work purposes
         */
-        fetch(`https://data.police.uk/api/` + locatio + `/` +identif + `/events`)
+        fetch(`https://data.police.uk/api/` + locatio + `/` +identif + `/people`)
         .then(res => res.json())
         .then(data => {
             console.log(data)
             console.log('done with data loading')
 
-            // code below gets the Nearby events data within a certain location and inserts it onto the website front page
+            // code below gets the Nearby Watchers data within a certain location and inserts it onto the website front page
+            
+            /*
             for (elem of data) {
                 document.querySelector('#result-nearbyEventsData').innerHTML += `
 
@@ -226,6 +228,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
                 `
             }
             
+            */
             
         });
         
