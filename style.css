@@ -8,7 +8,7 @@ body {
     background: linear-gradient(black, rgb(192, 190, 190));
     display: flex;
 }
-img {
+img {  /* this styles the police badge on the webpage */
     background-color: white;
     width: 300px;
     height: 300px;
