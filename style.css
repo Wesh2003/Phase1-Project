@@ -1,30 +1,102 @@
+body {
+
+    background: linear-gradient(black, grey);
+}
+
+
 #main {
     display:flex;
     flex-direction: row;
-    justify-content: flex-start;
-    background-color: aqua;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2em;
+
 
 }
-
+.head {
+    color: white;
+    margin-left:100px;
+    width:800px;
+    font-size: 100px;
+}
 
 #police-data {
-    background-color: red;
+    background-color: rgb(46, 39, 39);
+    color: white;
+    display: inline-block;
+    text-align:left;
+    width: 300px;
+    padding: 40px 40px 40px 40px;
+    text-wrap: wrap;
+
 }
 
+label {
+    font-size: 40px;
+    font-style: italic;
+}
+
+input {
+    margin-top: 30px;
+    width: 200px;
+    height: 30px;
+}
+
+button {
+    width: 140px;
+    height: 50px;
+    margin-top: 15px;
+    font-size: 25px;
+    background:linear-gradient(#15ea23, #a419d6);
+    color: white;
+}
 #senior-officer-data {
-    background-color: red;
+    background-color: rgb(27, 24, 24);
+    color: white;
+    display: inline-block;
+    text-align:left;
+    width: 300px;
+    padding: 40px 40px 40px 40px;
+}
+
+#crime-data {
+    background-color: rgb(27, 24, 24);
+    color: white;
+    display: inline-block;
+    text-align:left;
+    width: 300px;
+    padding: 40px 40px 40px 40px;
+    text-wrap: wrap;
 }
 
 #list-of-neighbourhoods-data {
-    background-color: red;
+    background-color: rgb(27, 24, 24);
+    color: white;
+    display: inline-block;
+    text-align:left;
+    width: 250px;
+    padding: 40px 40px 40px 40px;
+    text-wrap: wrap;
 }
 
 
 #nearby-events-data {
-    background-color: red;
+    background-color: rgb(27, 24, 24);
+    color: white;
+    display: inline-block;
+    text-align:left;
+    width: 300px;
+    padding: 40px 40px 40px 40px;
+    text-wrap: wrap;
 }
 
 
 #nearby-watchers-data {
-    background-color: red;
+    background-color: rgb(27, 24, 24);
+    color: white;
+    display: inline-block;
+    text-align:left;
+    width: 300px;
+    padding: 40px 40px 40px 40px;
+    text-wrap: wrap;
 }
