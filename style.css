@@ -3,6 +3,19 @@ body {
     background: linear-gradient(black, grey);
 }
 
+#nav {
+    width: 100%;
+    background: linear-gradient(black, rgb(192, 190, 190));
+    display: flex;
+}
+img {
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+
+}
 
 #main {
     display:flex;
@@ -13,6 +26,7 @@ body {
 
 
 }
+
 .head {
     color: white;
     margin-left:100px;
