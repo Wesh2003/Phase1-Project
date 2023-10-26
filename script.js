@@ -26,9 +26,13 @@ document.addEventListener('DOMContentLoaded', (e)=>{
                 <p>${data.escription}</p>
                 <p>${data.telephone}</p>
                 <a target = "_blank" class = "links" href = "${data.engagement_methods[2].url}"> ${locatio} Youtube Page</a>
+                <br>
                 <a target = "_blank" class = "links" href = "${data.engagement_methods[0].url}"> ${locatio} Facebook Page</a>
+                <br>
                 <a target = "_blank" class = "links" href = "${data.engagement_methods[1].url}"> ${locatio} Twitter Website Page</a>
+                <br>
                 <a target = "_blank" class = "links" href = "${data.engagement_methods[3].url}"> ${locatio} Crime News Update Website Page</a>
+                <br>
                 <a target = "_blank" class = "links" href = "${data.url}"> ${locatio} Police Official website </a>
             `
 
@@ -60,6 +64,8 @@ document.addEventListener('DOMContentLoaded', (e)=>{
                 <h1>Name: ${elem.name}</h1>
                 <h2>Rank: ${elem.rank}</h2>
                 ${elem.bio}
+                <br>
+                <br>
                 `
             }
 
