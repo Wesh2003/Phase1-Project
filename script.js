@@ -25,11 +25,11 @@ document.addEventListener('DOMContentLoaded', (e)=>{
                 <p>Name of force: ${data.name} </p>
                 <p>${data.escription}</p>
                 <p>${data.telephone}</p>
-                <a target = "_blank" href = "${data.engagement_methods[2].url}"> ${locatio} Youtube Page</a>
-                <a target = "_blank" href = "${data.engagement_methods[0].url}"> ${locatio} Facebook Page</a>
-                <a target = "_blank" href = "${data.engagement_methods[1].url}"> ${locatio} Twitter Website Page</a>
-                <a target = "_blank" href = "${data.engagement_methods[3].url}"> ${locatio} Crime News Update Website Page</a>
-                <a target = "_blank" href = "${data.url}"> ${locatio} Police Official website </a>
+                <a target = "_blank" class = "links" href = "${data.engagement_methods[2].url}"> ${locatio} Youtube Page</a>
+                <a target = "_blank" class = "links" href = "${data.engagement_methods[0].url}"> ${locatio} Facebook Page</a>
+                <a target = "_blank" class = "links" href = "${data.engagement_methods[1].url}"> ${locatio} Twitter Website Page</a>
+                <a target = "_blank" class = "links" href = "${data.engagement_methods[3].url}"> ${locatio} Crime News Update Website Page</a>
+                <a target = "_blank" class = "links" href = "${data.url}"> ${locatio} Police Official website </a>
             `
 
 
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
                 document.querySelector('#result-crimeData').innerHTML += `
 
                 <h3>Name: ${elem.name}</h3>
-                <a target = "_blank" href="${elem.url}">${elem.name}</a>
+                <a target = "_blank" class = "links" href="${elem.url}">${elem.name}</a>
                 `
             }
             
@@ -247,32 +247,3 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 }) // ---MARKS THE END OF DOMCONTENT LOADED--
 
 
-
-
-
-
-
-function getNearbyEventsDataFromServer() {
-    // code below gets Nearby events data from server and converts it to local json for work purposes
-    fetch('https://data.police.uk/api/crime-categories?date=' + date )
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-    });
-    console.log('done with data loading')
-}
-
-function getNearbyWatchersDataFromServer() {
-    // code below gets Nearby Watchers data from server and converts it to local json for work purposes
-    fetch('https://data.police.uk/api/crime-categories?date=' + date )
-    .then(res => res.json())
-    .then(data => {
-        console.log(data)
-    });
-    console.log('done with data loading')
-}
-
-
-function startingPage() {
-
-}
